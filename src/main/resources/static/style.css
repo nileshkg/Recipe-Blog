@@ -1,0 +1,66 @@
+.navbar{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  }
+
+body{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+
+  .card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.8);
+}
+
+.card img {
+  width: 75%;
+  border-radius: 40%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ h3{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+h2{
+ position: relative;
+ font-size: 4em;
+ letter-spacing: 10px;
+ color: #252839;
+ -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+ line-height: 0.7em;
+ outline: none;
+ text-transform: uppercase;
+ animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+  10%, 18%, 20%, 60%, 92%
+  {
+  color: #0e3742;
+  text-shadow: none;
+  }
+  10%, 90%, 100%
+  {
+  color: #fff;
+  text-shadow: 0 0 10px #03bcf4,
+  0 10 10px #03bcf4,
+  0 20 10px #03bcf4,
+  0 40 10px #03bcf4,
+  0 80 10px #03bcf4,
+  0 160 10px #03bcf4;
+  }
+}

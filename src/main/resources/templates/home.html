@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<!-- Bootstrap CDN
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+-->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<style>
+
+	.navbar{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  }
+
+body{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+
+  .card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.8);
+}
+
+.card img {
+  width: 75%;
+  border-radius: 40%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+ h3{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+h2{
+ position: relative;
+ font-size: 4em;
+ letter-spacing: 10px;
+ color: #252839;
+ -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+ line-height: 0.7em;
+ outline: none;
+ text-transform: uppercase;
+ animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+  10%, 18%, 20%, 60%, 92%
+  {
+  color: #0e3742;
+  text-shadow: none;
+  }
+  10%, 90%, 100%
+  {
+  color: #fff;
+  text-shadow: 0 0 10px #03bcf4,
+  0 10 10px #03bcf4,
+  0 20 10px #03bcf4,
+  0 40 10px #03bcf4,
+  0 80 10px #03bcf4,
+  0 160 10px #03bcf4;
+  }
+}
+
+</style>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-header">
+			<a class="navbar-brand"  th:href="@{/home}">East African Eats</a>
+			<a class="navbar-brand"  th:href="@{/login}">Login</a>
+			<a class="navbar-brand"  th:href="@{/registration}">Register</a>
+		</div>
+</nav>
+<br/>
+<br/>
+<h2 contenteditable="true" style="text-align:center;">East African Eats</h2>
+    <div class="container" style="height: 100vh; margin-top: 5%">
+		<div class="col-md-12" style="margin-left: 3%">
+			<div class="row">
+				<div class="col-md-3 py-3 d-flex align-items-center justify-content-center"  th:each="blog: ${blogs}">
+				<div class="card" style="width: 18rem; color:white;">
+					<img class="card-img-top img-fluid h-50" src="https://www.cypressgreen.in/blog/wp-content/uploads/2021/03/food-1024x683.jpg" alt="Card image cap">
+					<br/>
+					<div class="card-body">
+						<h3 style="color:#f86368;" class="card-title" th:text="${blog.title}">Card title</h3>
+					</div>
+                    <br/>
+					<h4 style="color:white;">Author-</h4>
+					<h5 style="color:white;" th:text="${blog.author}">Author</h5>
+					<div class="card-body">
+						<a style="color:violet;" th:href="@{/home/recipe/}+${blog.blogId}" class="card-link">Read More..</a>
+					</div>
+				</div>
+			</div>
+			</div>
+      </div>
+	</div>
+  </body>
+</html>
