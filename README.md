@@ -1,7 +1,7 @@
 
 # East African Eats
 
-A Website where you can find blog of recipes uploaded by different blogers.
+A Website where you can find blog on different recipes uploaded by blogers.
 
 
 ## Tech stack
